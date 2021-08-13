@@ -1,4 +1,6 @@
-# Primary_Key PF_Bar_Code Imm_Bar_Code Event User_Name Date_Time
+# Python 3.7.9 32-bit
+# MySQL db, where store data are stored supposed to have fields:
+# Primary_Key(int) PF_Bar_Code(str) Imm_Bar_Code(str) Event(str) User_Name(str) Date_Time(DateTime)
 import pymysql
 import json
 import os
@@ -50,7 +52,8 @@ class Server(BaseHTTPRequestHandler):
 # Execute sql string with MySQL server
 def sqlExec(sqlStr):
     try:
-        connection = pymysql.connect(host='sgt-server.bwf.ru', user='tester', password='tester', database='test')
+        connection = \
+            pymysql.connect(host='sgt-server.bwf.ru', user='tester', password='tester', database='test')
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute(sqlStr)
@@ -109,7 +112,8 @@ def BDandFilesWorker():
                 warningLevel[0] = 2
             elif( iniInfo[i] >= RESOURCE_BEFORE_A_MEDIUM_REPAIR_WARNING_LIMIT ):
                 warningLevel[0] = 1
-            tempRow = addColumn(tempRow, str (RESOURCE_BEFORE_A_MEDIUM_REPAIR - iniInfo[i] ), warningLevel[0])
+            tempRow = \
+                addColumn(tempRow, str (RESOURCE_BEFORE_A_MEDIUM_REPAIR - iniInfo[i] ), warningLevel[0])
             if( iniInfo[i] >= RESOURCE_BEFORE_OVERHAUL ):
                 warningLevel[1] = 2
             elif( iniInfo[i] >= RESOURCE_BEFORE_OVERHAUL_WARNING_LIMIT ):
