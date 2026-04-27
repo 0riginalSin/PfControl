@@ -22,15 +22,12 @@
                 <TextBlock x:Name="StartLoggingBTB" VerticalAlignment="Center" Text="Начать логир." Margin="-1,1,-1,0"/>
             </Button.Content>
         </Button>
-        <Button x:Name="ClearButton" Content="Очистить БД" Margin="528,49,0,0" VerticalAlignment="Top" Click="ClearB_Click" Width="115" Height="33" Visibility="Collapsed"/>
-        <Button x:Name="RefreshButton" Content="Обновить БД" Margin="652,49,0,0" VerticalAlignment="Top" Width="115" Click="RefreshB_Click" Height="34" Visibility="Collapsed"/>
         <TextBox x:Name="UserNameTBox" HorizontalAlignment="Left" Margin="199,221,0,0" Text="Имя пользователя" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="280" TextChanged="UserNameTBox_TextChanged"/>
         <TextBlock x:Name="TBlockLog" HorizontalAlignment="Left" Margin="528,167,0,0" Text="Лог сканера штрихкодов" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="TBlockPfButtonPin" HorizontalAlignment="Left" Margin="528,115,0,0" Text="Положение пресс-формы" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="ImmInitButton" Content="Скан. ТПА" Margin="358,109,0,0" VerticalAlignment="Top" Click="ImmInitB_Click" Width="143"/>
         <Button x:Name="PfInitButton" Content="Скан. ПФ" Margin="358,161,0,0" VerticalAlignment="Top" Width="143" Click="PfInitB_Click"/>
-        <Button x:Name="SendButton" Content="Передать" Margin="1082,72,0,0" VerticalAlignment="Top" Click="SendB_Click" Visibility="Collapsed"/>
 
         <toolkit:DataGrid x:FieldModifier="public" x:Name="DBShowDataGrid" HorizontalAlignment="Left" Margin="189,295,0,11" Width="1205" ItemsSource="{x:Bind Prop}"
                       IsReadOnly="True" AutoGenerateColumns="True" AutoGeneratingColumn="DBShowDataGrid_AutoGeneratingColumn">
